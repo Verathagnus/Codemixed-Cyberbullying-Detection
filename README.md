@@ -21,6 +21,16 @@ The deep learning models used a different approach to tokenization.
 
 For machine learning models, various parameter ranges for each model were selected and the best parameter options for each model were found using GridSearchCV.
 
+| Model                       | Train Accuracy | Test Accuracy | Precision | Recall  | F1 Score |
+|------------------------------|----------------|---------------|-----------|---------|----------|
+| **Logistic Regression**       | 0.5532         | 0.5298        | 0.5097    | 0.5112  | 0.5298   |
+| **Random Forest**             | 0.9999         | 0.5571        | 0.5895    | 0.5217  | 0.5571   |
+| **XGBoost**                   | 0.9999         | 0.5740        | 0.5608    | 0.5615  | 0.5740   |
+| **Gaussian Naive Bayes**      | 0.4746         | 0.4626        | 0.4716    | 0.4364  | 0.4626   |
+| **Multinomial Naive Bayes**   | 0.3372         | 0.3463        | 0.1141    | 0.2412  | 0.3463   |
+| **Support Vector Machine**    | 0.7798         | 0.5877        | 0.5820    | 0.5670  | 0.5877   |
+| **Voting Classifier (Hybrid)**| 0.9158         | 0.5713        | 0.5735    | 0.5497  | 0.5713   |
+
 ### 1. Logistic Regression
 
 **Hyperparameters:**
@@ -112,15 +122,6 @@ For Deep Learning, parameters had to be tuned manually till an appreciable perfo
 
 The following table summarizes the performance of each model on both training and test data:
 
-| Model               | Train Accuracy | Test Accuracy | Precision | Recall | F1 Score |
-|---------------------|----------------|---------------|-----------|--------|----------|
-| Naive Bayes         | 0.2597         | 0.25          | 0.35      | 0.25   | 0.27     |
-| Logistic Regression | 0.4424         | 0.42          | 0.36      | 0.42   | 0.35     |
-| KNN                 | 0.4800         | 0.35          | 0.31      | 0.35   | 0.31     |
-| K-Means             | 0.1671         | 0.17          | 0.21      | 0.17   | 0.18     |
-| SVM                 | 0.7941         | 0.46          | 0.44      | 0.46   | 0.43     |
-| Decision Tree       | 0.5398         | 0.34          | 0.27      | 0.34   | 0.29     |
-| Random Forest       | 0.9971         | 0.42          | 0.35      | 0.42   | 0.33     |
 
 
 ## Setup
