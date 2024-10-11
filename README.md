@@ -8,7 +8,7 @@ Codemixed Cyberbullying Detection is a machine learning project aimed at identif
 Given a text sentence, classify the cyberbullying class present in the test from among 'abusive', 'age', 'gender', 'mockery', 'offensive', 'religion' and 'not_cyberbullying'
 
 ## Techniques 
-Both Machine Learning and Deep Learning techniques were tested for comparison. Machine Learning models used are Naive Bayes Model (Gaussian and Multinomial), Support Vector Machine, Random Forest, XG Boost and Voting Classifier based on all these models. 
+Both Machine Learning and Deep Learning techniques were tested for comparison. Machine Learning models used are Logistic Regression, Naive Bayes Model (Gaussian and Multinomial), Support Vector Machine, Random Forest, XG Boost and Voting Classifier based on the best parameters of the rest of these models. 
 The Deep Learning models used are RNN, LSTM, BERT, mBERT and Llama 3.1 8B instruct model.
 The detailed parameters and test dataset evaluation summary are described in later sections.
 
@@ -21,7 +21,89 @@ The deep learning models used a different approach to tokenization.
 
 For machine learning models, various parameter ranges for each model were selected and the best parameter options for each model were found using GridSearchCV.
 
-## 
+### 1. Logistic Regression
+
+**Hyperparameters:**
+- `C`: 0.1
+- `multi_class`: 'auto'
+- `penalty`: 'l1'
+- `solver`: 'saga'
+
+**Description**: Logistic Regression with L1 regularization and the 'saga' solver. It shows moderate performance on the test set, with balanced precision and recall scores.
+
+---
+
+### 2. Random Forest
+
+**Hyperparameters:**
+- `criterion`: 'gini'
+- `max_depth`: None
+- `max_features`: 'sqrt'
+- `min_samples_leaf`: 1
+- `min_samples_split`: 2
+- `n_estimators`: 4000
+
+**Description**: Random Forest with 4000 trees, Gini criterion, and square root feature selection. Despite its high accuracy on the training data (overfitting), the test performance shows a more moderate result with a balanced precision and recall.
+
+---
+
+### 3. XGBoost
+
+**Hyperparameters:**
+- `colsample_bytree`: 1.0
+- `learning_rate`: 0.1
+- `max_depth`: 7
+- `n_estimators`: 4000
+- `reg_alpha`: 0.1
+- `reg_lambda`: 0
+- `subsample`: 0.6
+
+**Description**: XGBoost is configured with a learning rate of 0.1, max depth of 7, and 4000 estimators. The model provides good test accuracy and balanced precision-recall. It also exhibits overfitting due to its perfect accuracy on the training set.
+
+---
+
+### 4. Gaussian Naive Bayes
+
+**Hyperparameters:**
+- `var_smoothing`: 1e-100
+
+**Description**: Gaussian Naive Bayes model with a very low variance smoothing parameter (1e-100). The model shows lower performance, but it's still competitive, with slightly better precision than recall.
+
+---
+
+### 5. Multinomial Naive Bayes
+
+**Hyperparameters:**
+- `alpha`: 150
+- `fit_prior`: True
+
+**Description**: Multinomial Naive Bayes with an `alpha` of 150. This model performs poorly with a very low precision score, indicating it's not ideal for this particular task.
+
+---
+
+### 6. Support Vector Machine (SVM)
+
+**Hyperparameters:**
+- `C`: 1.4
+- `class_weight`: None
+- `coef0`: 0.0
+- `degree`: 2
+- `gamma`: 0.01
+- `kernel`: 'rbf'
+- `probability`: True
+
+**Description**: SVM with an RBF kernel and a regularization parameter `C` of 1.4. This model shows strong performance on the test set, with well-balanced precision and recall values.
+
+---
+
+### 7. Voting Classifier (Hybrid)
+
+**Ensemble Model:** Combining Logistic Regression, Random Forest, XGBoost, Naive Bayes, and SVM.
+
+**Description**: The Voting Classifier aggregates the predictions from Logistic Regression, Random Forest, XGBoost, Naive Bayes, and SVM. It provides stable results with a strong trade-off between precision and recall. The high training accuracy suggests some overfitting, but the test results show balanced overall performance.
+
+The models implemented in this project vary in performance, with SVM, XGBoost, and the Voting Classifier providing the best results based on test accuracy and balanced F1 scores.
+
 
 For Deep Learning, parameters had to be tuned manually till an appreciable performance was achieved.
 
