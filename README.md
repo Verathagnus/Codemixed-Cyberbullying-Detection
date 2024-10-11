@@ -8,34 +8,18 @@ Codemixed Cyberbullying Detection is a machine learning project aimed at identif
 Given a text sentence, classify the cyberbullying class present in the test from among 'abusive', 'age', 'gender', 'mockery', 'offensive', 'religion' and 'not_cyberbullying'
 
 ## Techniques 
-Both Machine Learning and Deep Learning techniques were tested for comparison. Machine Learning models used are Naive Bayes Model, Support Vector Machine, Decision Tree, Random Forest, XG Boost and Voting Classifier based on all these models. 
+Both Machine Learning and Deep Learning techniques were tested for comparison. Machine Learning models used are Naive Bayes Model (Gaussian and Multinomial), Support Vector Machine, Random Forest, XG Boost and Voting Classifier based on all these models. 
 The Deep Learning models used are RNN, LSTM, BERT, mBERT and Llama 3.1 8B instruct model.
 The detailed parameters and test dataset evaluation summary are described in later sections.
 
 ## Tokenizers
 
-The mach
-The dataset text is converted to embeddings using the following tokenizers and models:
-
-- **BERT Tokenizer and BERT Model**: A tokenizer based on the BERT model by Google, which uses WordPiece tokenization to handle text and create embeddings for use in various NLP tasks. The tokenized sentences are then provided to the BERT model to get the embeddings for the input sentences.
-
-## Model Performance
-
-The following table summarizes the performance of each model on both training and test data:
-
-| Model               | Train Accuracy | Test Accuracy | Precision | Recall | F1 Score |
-|---------------------|----------------|---------------|-----------|--------|----------|
-| Naive Bayes         | 0.2597         | 0.25          | 0.35      | 0.25   | 0.27     |
-| Logistic Regression | 0.4424         | 0.42          | 0.36      | 0.42   | 0.35     |
-| KNN                 | 0.4800         | 0.35          | 0.31      | 0.35   | 0.31     |
-| K-Means             | 0.1671         | 0.17          | 0.21      | 0.17   | 0.18     |
-| SVM                 | 0.7941         | 0.46          | 0.44      | 0.46   | 0.43     |
-| Decision Tree       | 0.5398         | 0.34          | 0.27      | 0.34   | 0.29     |
-| Random Forest       | 0.9971         | 0.42          | 0.35      | 0.42   | 0.33     |
+The machine learning models used BERT tokenizer pretrained on Hinglish data for getting embeddings of length 768 from input sentences. The embeddings were then compressed to 64 length embeddings which were finally used by the model.
+The deep learning models used a different approach.
 
 ### Detailed Model Descriptions
 
-#### Naive Bayes
+#### Naive Bayes 
 - **Description**: Naive Bayes is a probabilistic classifier based on Bayes' Theorem, with the assumption of independence between features. It's particularly effective for text classification tasks.
 - **Performance**: Naive Bayes has a training accuracy of 0.2597 and a test accuracy of 0.25. It performs moderately well for some classes but struggles with others, indicating that the independence assumption may not hold well in this context.
 
@@ -62,6 +46,22 @@ The following table summarizes the performance of each model on both training an
 #### Random Forest
 - **Description**: Random Forest is an ensemble method that builds multiple decision trees and merges them to get a more accurate and stable prediction. It reduces overfitting compared to a single decision tree.
 - **Performance**: Random Forest has a training accuracy of 0.9971 and a test accuracy of 0.42, indicating it fits the training data very well. However, its test accuracy is much lower, suggesting overfitting. It struggles with minority classes, impacting its overall performance metrics.
+
+
+## Model Performance
+
+The following table summarizes the performance of each model on both training and test data:
+
+| Model               | Train Accuracy | Test Accuracy | Precision | Recall | F1 Score |
+|---------------------|----------------|---------------|-----------|--------|----------|
+| Naive Bayes         | 0.2597         | 0.25          | 0.35      | 0.25   | 0.27     |
+| Logistic Regression | 0.4424         | 0.42          | 0.36      | 0.42   | 0.35     |
+| KNN                 | 0.4800         | 0.35          | 0.31      | 0.35   | 0.31     |
+| K-Means             | 0.1671         | 0.17          | 0.21      | 0.17   | 0.18     |
+| SVM                 | 0.7941         | 0.46          | 0.44      | 0.46   | 0.43     |
+| Decision Tree       | 0.5398         | 0.34          | 0.27      | 0.34   | 0.29     |
+| Random Forest       | 0.9971         | 0.42          | 0.35      | 0.42   | 0.33     |
+
 
 ## Setup
 
