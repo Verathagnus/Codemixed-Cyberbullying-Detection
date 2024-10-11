@@ -39,6 +39,13 @@ For machine learning models, various parameter ranges for each model were select
 - `penalty`: 'l1'
 - `solver`: 'saga'
 
+**Performance:**
+- **Train Accuracy**: 0.5532
+- **Test Accuracy**: 0.5298
+- **Precision**: 0.5097
+- **Recall**: 0.5112
+- **F1 Score**: 0.5298
+
 **Description**: Logistic Regression with L1 regularization and the 'saga' solver. It shows moderate performance on the test set, with balanced precision and recall scores.
 
 ---
@@ -52,6 +59,13 @@ For machine learning models, various parameter ranges for each model were select
 - `min_samples_leaf`: 1
 - `min_samples_split`: 2
 - `n_estimators`: 4000
+
+**Performance:**
+- **Train Accuracy**: 0.9999
+- **Test Accuracy**: 0.5571
+- **Precision**: 0.5895
+- **Recall**: 0.5217
+- **F1 Score**: 0.5571
 
 **Description**: Random Forest with 4000 trees, Gini criterion, and square root feature selection. Despite its high accuracy on the training data (overfitting), the test performance shows a more moderate result with a balanced precision and recall.
 
@@ -68,6 +82,13 @@ For machine learning models, various parameter ranges for each model were select
 - `reg_lambda`: 0
 - `subsample`: 0.6
 
+**Performance:**
+- **Train Accuracy**: 0.9999
+- **Test Accuracy**: 0.5740
+- **Precision**: 0.5608
+- **Recall**: 0.5615
+- **F1 Score**: 0.5740
+
 **Description**: XGBoost is configured with a learning rate of 0.1, max depth of 7, and 4000 estimators. The model provides good test accuracy and balanced precision-recall. It also exhibits overfitting due to its perfect accuracy on the training set.
 
 ---
@@ -76,6 +97,13 @@ For machine learning models, various parameter ranges for each model were select
 
 **Hyperparameters:**
 - `var_smoothing`: 1e-100
+
+**Performance:**
+- **Train Accuracy**: 0.4746
+- **Test Accuracy**: 0.4626
+- **Precision**: 0.4716
+- **Recall**: 0.4364
+- **F1 Score**: 0.4626
 
 **Description**: Gaussian Naive Bayes model with a very low variance smoothing parameter (1e-100). The model shows lower performance, but it's still competitive, with slightly better precision than recall.
 
@@ -86,6 +114,13 @@ For machine learning models, various parameter ranges for each model were select
 **Hyperparameters:**
 - `alpha`: 150
 - `fit_prior`: True
+
+**Performance:**
+- **Train Accuracy**: 0.3372
+- **Test Accuracy**: 0.3463
+- **Precision**: 0.1141
+- **Recall**: 0.2412
+- **F1 Score**: 0.3463
 
 **Description**: Multinomial Naive Bayes with an `alpha` of 150. This model performs poorly with a very low precision score, indicating it's not ideal for this particular task.
 
@@ -102,6 +137,13 @@ For machine learning models, various parameter ranges for each model were select
 - `kernel`: 'rbf'
 - `probability`: True
 
+**Performance:**
+- **Train Accuracy**: 0.7798
+- **Test Accuracy**: 0.5877
+- **Precision**: 0.5820
+- **Recall**: 0.5670
+- **F1 Score**: 0.5877
+
 **Description**: SVM with an RBF kernel and a regularization parameter `C` of 1.4. This model shows strong performance on the test set, with well-balanced precision and recall values.
 
 ---
@@ -110,7 +152,16 @@ For machine learning models, various parameter ranges for each model were select
 
 **Ensemble Model:** Combining Logistic Regression, Random Forest, XGBoost, Naive Bayes, and SVM.
 
+**Performance:**
+- **Train Accuracy**: 0.9158
+- **Test Accuracy**: 0.5713
+- **Precision**: 0.5735
+- **Recall**: 0.5497
+- **F1 Score**: 0.5713
+
 **Description**: The Voting Classifier aggregates the predictions from Logistic Regression, Random Forest, XGBoost, Naive Bayes, and SVM. It provides stable results with a strong trade-off between precision and recall. The high training accuracy suggests some overfitting, but the test results show balanced overall performance.
+
+---
 
 The models implemented in this project vary in performance, with SVM, XGBoost, and the Voting Classifier providing the best results based on test accuracy and balanced F1 scores.
 
