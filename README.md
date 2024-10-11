@@ -4,12 +4,19 @@
 
 Codemixed Cyberbullying Detection is a machine learning project aimed at identification of the class of cyberbullying from several types in codemixed text samples.
 
+## Formal Description of Task 
+Given a text sentence, classify the cyberbullying class present in the test from among 'abusive', 'age', 'gender', 'mockery', 'offensive', 'religion' and 'not_cyberbullying'
+
+## Techniques 
+Both Machine Learning and Deep Learning techniques were tested for comparison. Machine Learning models used are Naive Bayes Model, Support Vector Machine, Decision Tree, Random Forest, XG Boost and Voting Classifier based on all these models. 
+The Deep Learning models used are RNN, LSTM, BERT, mBERT and Llama 3.1 8B instruct model.
+The detailed parameters and test dataset evaluation summary are described in later sections.
+
 ## Tokenizers
 
-
+The mach
 The dataset text is converted to embeddings using the following tokenizers and models:
 
-- **GPT-2 Tokenizer and GPT2 Model**: A tokenizer based on the GPT-2 model by OpenAI, which uses Byte Pair Encoding (BPE) to handle text and generate embeddings suitable for downstream tasks. The tokenized sentences are then provided to th
 - **BERT Tokenizer and BERT Model**: A tokenizer based on the BERT model by Google, which uses WordPiece tokenization to handle text and create embeddings for use in various NLP tasks. The tokenized sentences are then provided to the BERT model to get the embeddings for the input sentences.
 
 ## Model Performance
