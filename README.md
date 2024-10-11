@@ -15,10 +15,12 @@ The detailed parameters and test dataset evaluation summary are described in lat
 ## Tokenizers
 
 The machine learning models used BERT tokenizer pretrained on Hinglish data for getting embeddings of length 768 from input sentences. The embeddings were then compressed to 64 length embeddings which were finally used by the model.
+
 The deep learning models used a different approach to tokenization.
 
 ### Detailed Model Descriptions
 
+## Machine Learning Models
 For machine learning models, various parameter ranges for each model were selected and the best parameter options for each model were found using GridSearchCV.
 
 | Model                       | Train Accuracy | Test Accuracy | Precision | Recall  | F1 Score |
@@ -165,45 +167,10 @@ For machine learning models, various parameter ranges for each model were select
 
 The models implemented in this project vary in performance, with SVM, XGBoost, and the Voting Classifier providing the best results based on test accuracy and balanced F1 scores.
 
-
+## Deep Learning
 For Deep Learning, parameters had to be tuned manually till an appreciable performance was achieved.
 
-
-## Model Performance
-
-The following table summarizes the performance of each model on both training and test data:
-
-
-
-## Setup
-
-To set up the project locally, follow these steps:
-
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/<yourusername>/Multilingual-Emotion-Detection.git
-   cd Multilingual-Emotion-Detection
-   ```
-
-2. **Create and activate a virtual environment (optional but recommended):**
-   ```sh
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-   ```
-
-3. **Install the dependencies:**
-   ```sh
-   pip install -r requirements.txt
-   ```
-4. **Download model files at [https://uploadnow.io/f/dc4f6Hb](https://uploadnow.io/f/dc4f6Hb) and place them in a folder named models inside the project directory.**
-5. **Run the Streamlit application:**
-   ```sh
-   streamlit run streamlit_app.py
-   ```
-
-## Usage
-
-Once the Streamlit app is running, you can interact with the models through a web interface. You can input text in Hindi (or other supported Indic languages) and select the model you wish to use for emotion detection. The app will display the detected emotion. Using fasttext-langdetect and iso639 packages, the input language is found and then appropriate models list are selected for that language.  
+ 
 
 <!-- ## Example
 
