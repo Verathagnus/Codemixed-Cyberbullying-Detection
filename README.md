@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Codemixed Cyberbullying Detection is a machine learning project aimed at identification of the class of cyberbullying from several types in codemixed text samples.
+Codemixed Cyberbullying Detection is a machine learning project aimed at identification of the class of cyberbullying in codemixed text samples.
 
 ## Formal Description of Task 
 Given a text sentence, classify the cyberbullying class present in the test from among 'abusive', 'age', 'gender', 'mockery', 'offensive', 'religion' and 'not_cyberbullying'
@@ -15,37 +15,15 @@ The detailed parameters and test dataset evaluation summary are described in lat
 ## Tokenizers
 
 The machine learning models used BERT tokenizer pretrained on Hinglish data for getting embeddings of length 768 from input sentences. The embeddings were then compressed to 64 length embeddings which were finally used by the model.
-The deep learning models used a different approach.
+The deep learning models used a different approach to tokenization.
 
 ### Detailed Model Descriptions
 
-#### Naive Bayes 
-- **Description**: Naive Bayes is a probabilistic classifier based on Bayes' Theorem, with the assumption of independence between features. It's particularly effective for text classification tasks.
-- **Performance**: Naive Bayes has a training accuracy of 0.2597 and a test accuracy of 0.25. It performs moderately well for some classes but struggles with others, indicating that the independence assumption may not hold well in this context.
+For machine learning models, various parameter ranges for each model were selected and the best parameter options for each model were found using GridSearchCV.
 
-#### Logistic Regression
-- **Description**: Logistic Regression is a linear model used for binary classification, but it can be extended to multiclass classification using techniques like one-vs-rest. It predicts the probability of a sample belonging to a particular class.
-- **Performance**: Logistic Regression shows better performance than Naive Bayes with a training accuracy of 0.4424 and a test accuracy of 0.42. It handles some classes well but has poor performance for others, especially for minority classes.
+## 
 
-#### K-Nearest Neighbors (KNN)
-- **Description**: KNN is a non-parametric method used for classification and regression. It classifies a sample based on the majority class among its k-nearest neighbors in the feature space.
-- **Performance**: KNN has a training accuracy of 0.4800 and a test accuracy of 0.35. It performs reasonably well for the major classes but poorly for the minority classes. It is sensitive to the choice of k and the distance metric.
-
-#### K-Means
-- **Description**: K-Means is a clustering algorithm that partitions the data into k clusters based on the feature space. It is not typically used for classification tasks but can be adapted for such purposes.
-- **Performance**: K-Means has a training accuracy of 0.1671 and a test accuracy of 0.17, indicating it is not well-suited for this classification task. It shows poor precision and recall for most classes.
-
-#### Support Vector Machine (SVM)
-- **Description**: SVM is a powerful classification algorithm that finds the hyperplane which best separates the classes in the feature space. It can be used for linear and non-linear classification.
-- **Performance**: SVM has a training accuracy of 0.7941 and a test accuracy of 0.46, the highest among the models tested. It performs well overall but still has difficulties with minority classes, which affects its macro and weighted averages.
-
-#### Decision Tree
-- **Description**: Decision Trees are non-linear models that split the data based on feature values, creating a tree-like structure of decisions. They are easy to interpret but can overfit the training data.
-- **Performance**: Decision Tree has a training accuracy of 0.5398 and a test accuracy of 0.34. It performs decently for some classes but struggles with others, especially the minority classes, indicating potential overfitting.
-
-#### Random Forest
-- **Description**: Random Forest is an ensemble method that builds multiple decision trees and merges them to get a more accurate and stable prediction. It reduces overfitting compared to a single decision tree.
-- **Performance**: Random Forest has a training accuracy of 0.9971 and a test accuracy of 0.42, indicating it fits the training data very well. However, its test accuracy is much lower, suggesting overfitting. It struggles with minority classes, impacting its overall performance metrics.
+For Deep Learning, parameters had to be tuned manually till an appreciable performance was achieved.
 
 
 ## Model Performance
