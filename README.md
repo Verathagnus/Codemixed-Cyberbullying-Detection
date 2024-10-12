@@ -14,9 +14,9 @@ The detailed parameters and test dataset evaluation summary are described in lat
 
 ## Tokenizers
 
-The machine learning models used BERT tokenizer pretrained on Hinglish data for getting embeddings of length 768 from input sentences. The embeddings were then compressed to 64 length embeddings which were finally used by the model.
+The machine learning models and lstm models used BERT tokenizer pretrained on Hinglish data for getting embeddings of length 768 from input sentences. The embeddings were then compressed to 64 length embeddings which were finally used by the models.
 
-The deep learning models used a different approach to tokenization.
+The rest of the deep learning models, BERT, mBERT and LLama 3.1 8B Instruct models used their respective pretrained tokenizers.
 
 ### Detailed Model Descriptions
 
@@ -168,7 +168,11 @@ For machine learning models, various parameter ranges for each model were select
 The models implemented in this project vary in performance, with SVM, XGBoost, and the Voting Classifier providing the best results based on test accuracy and balanced F1 scores.
 
 ## Deep Learning
-For Deep Learning, parameters had to be tuned manually till an appreciable performance was achieved.
+For Deep Learning, parameters had to be tuned manually till an appreciable performance was achieved. 
+
+
+### 1. LSTM
+
 
  
 
