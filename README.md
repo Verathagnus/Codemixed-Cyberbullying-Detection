@@ -171,6 +171,15 @@ The models implemented in this project vary in performance, with SVM, XGBoost, a
 For Deep Learning, parameters had to be tuned manually till an appreciable performance was achieved. 
 
 
+| Model                       | Train Accuracy | Test Accuracy | Precision    | Recall      | F1 Score   |
+|------------------------------|----------------|---------------|--------------|-------------|------------|
+| **LSTM**                     | 0.9384         | 0.5379        | 0.5307       | 0.5435      | 0.5379     |
+| **BERT**                     | 0.9880         | 0.7482        | 0.7475       | 0.7482      | 0.7439     |
+| **mBERT**                    | 0.9960         | 0.7586        | 0.7584       | 0.7586      | 0.7554     |
+| **Llama 3.1 8B Instruct**     | 0.9373         | 0.7324        | 0.6652       | 0.6582      | 0.7324     |
+
+---
+
 ### 1. LSTM Model
 
 **Parameters:**
@@ -246,14 +255,7 @@ For Deep Learning, parameters had to be tuned manually till an appreciable perfo
 
 ---
 
-### Summary Table:
 
-| Model                       | Train Accuracy | Test Accuracy | Precision    | Recall      | F1 Score   |
-|------------------------------|----------------|---------------|--------------|-------------|------------|
-| **LSTM**                     | 0.9384         | 0.5379        | 0.5307       | 0.5435      | 0.5379     |
-| **BERT**                     | 0.9880         | 0.7482        | 0.7475       | 0.7482      | 0.7439     |
-| **mBERT**                    | 0.9960         | 0.7586        | 0.7584       | 0.7586      | 0.7554     |
-| **Llama 3.1 8B Instruct**     | 0.9373         | 0.7324        | 0.6652       | 0.6582      | 0.7324     |
 
 
  
