@@ -171,7 +171,89 @@ The models implemented in this project vary in performance, with SVM, XGBoost, a
 For Deep Learning, parameters had to be tuned manually till an appreciable performance was achieved. 
 
 
-### 1. LSTM
+### 1. LSTM Model
+
+**Parameters:**
+- Optimizer: Adam
+- Learning Rate: 1e-4
+- Epochs: 30
+
+**Performance:**
+- **Train Accuracy**: 0.9384
+- **Test Accuracy**: 0.5379
+- **F1 Score**: 0.5379
+- **Precision**: 0.5307
+- **Recall**: 0.5435
+
+**Description**: The LSTM model was trained using the Adam optimizer and performed well during training but exhibited moderate test accuracy and F1 score, suggesting overfitting. Precision and recall were closely matched, indicating a consistent classification performance across positive cases.
+
+---
+
+### 2. BERT Model
+
+**Parameters**: 
+- Optimizer: AdamW (default)
+- Learning Rate: 5e-5
+- Epochs: Trained until epoch 81, with no improvement observed for the last 10 epochs.
+
+**Performance:**
+- **Train Accuracy**: 0.9880
+- **Test Accuracy**: 0.7482
+- **F1 Score**: 0.7439
+- **Precision**: 0.7475
+- **Recall**: 0.7482
+
+**Description**: BERT performed excellently during training, reaching near-perfect accuracy. Test accuracy and F1 score were also strong, highlighting BERT’s ability to generalize well. The model showed balanced precision and recall, which means it handled both true positives and false positives well. However, further tuning might improve its stability after long epochs of training.
+
+---
+
+### 3. mBERT Model
+
+**Parameters**:
+- Optimizer: AdamW (default)
+- Learning Rate: 5e-5 (default parameters similar to BERT)
+- Epochs: Trained for 100 epochs
+
+**Performance:**
+- **Train Accuracy**: 0.9960
+- **Test Accuracy**: 0.7586
+- **F1 Score**: 0.7554
+- **Precision**: 0.7584
+- **Recall**: 0.7586
+
+**Description**: mBERT, the multilingual version of BERT, was trained for 100 epochs and demonstrated outstanding performance. With high test accuracy and balanced precision and recall, mBERT proved to be a robust model for this dataset. The longer training cycle appeared to have solidified its ability to generalize, with only minor differences between train and test performance.
+
+---
+
+### 4. Llama 3.1 8B Instruct Model
+
+**Parameters**:
+- Framework: Unsloth with LoRA adapter
+- LoRA Parameters: r=64, alpha=64
+- Precision: fp16
+- Epochs: 30
+- Optimizer: AdamW_8bit
+- Learning Rate: 2e-4
+
+**Performance**:
+- **Train Accuracy**: 0.9373
+- **Test Accuracy**: 0.7324
+- **F1 Score**: 0.7324
+- **Precision**: 0.6652
+- **Recall**: 0.6582
+
+**Description**: The Llama 3.1 8B Instruct model was fine-tuned using the Unsloth framework and LoRA adapters, making it highly efficient in terms of parameter utilization. Although the test accuracy and F1 score were slightly lower than BERT and mBERT, it performed admirably, showing consistent precision and recall. With further fine-tuning, the balance between precision and recall could be improved.
+
+---
+
+### Summary Table:
+
+| Model                       | Train Accuracy | Test Accuracy | Precision    | Recall      | F1 Score   |
+|------------------------------|----------------|---------------|--------------|-------------|------------|
+| **LSTM**                     | 0.9384         | 0.5379        | 0.5307       | 0.5435      | 0.5379     |
+| **BERT**                     | 0.9880         | 0.7482        | 0.7475       | 0.7482      | 0.7439     |
+| **mBERT**                    | 0.9960         | 0.7586        | 0.7584       | 0.7586      | 0.7554     |
+| **Llama 3.1 8B Instruct**     | 0.9373         | 0.7324        | 0.6652       | 0.6582      | 0.7324     |
 
 
  
