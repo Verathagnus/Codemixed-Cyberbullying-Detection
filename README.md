@@ -203,7 +203,7 @@ For Deep Learning, parameters had to be tuned manually till an appreciable perfo
 **Parameters**: 
 - Optimizer: AdamW (default)
 - Learning Rate: 5e-5
-- Epochs: Trained until epoch 81, with no improvement observed for the last 10 epochs.
+- Epochs: 81
 
 **Performance:**
 - **Train Accuracy**: 0.9880
@@ -212,7 +212,7 @@ For Deep Learning, parameters had to be tuned manually till an appreciable perfo
 - **Precision**: 0.7475
 - **Recall**: 0.7482
 
-**Description**: BERT performed excellently during training, reaching near-perfect accuracy. Test accuracy and F1 score were also strong, highlighting BERT’s ability to generalize well. The model showed balanced precision and recall, which means it handled both true positives and false positives well. However, further tuning might improve its stability after long epochs of training.
+**Description**: BERT performed excellently during training, reaching near-perfect accuracy. Test accuracy and F1 score were also strong, highlighting BERT’s ability to generalize well. The model showed balanced precision and recall, which means it handled both true positives and false positives well. Further training didn't improve the loss by much and hence stopped.
 
 ---
 
@@ -230,7 +230,7 @@ For Deep Learning, parameters had to be tuned manually till an appreciable perfo
 - **Precision**: 0.7584
 - **Recall**: 0.7586
 
-**Description**: mBERT, the multilingual version of BERT, was trained for 100 epochs and demonstrated outstanding performance. With high test accuracy and balanced precision and recall, mBERT proved to be a robust model for this dataset. The longer training cycle appeared to have solidified its ability to generalize, with only minor differences between train and test performance.
+**Description**: mBERT, the multilingual version of BERT, was trained for 100 epochs and demonstrated outstanding performance. With high test accuracy and balanced precision and recall, mBERT proved to be a robust model for this dataset. The longer training cycle appeared to have solidified its ability to generalize, with better test results than bert model albeit only by a small margin.
 
 ---
 
