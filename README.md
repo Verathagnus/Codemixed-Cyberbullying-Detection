@@ -173,8 +173,8 @@ For Deep Learning, parameters had to be tuned manually till an appreciable perfo
 
 | Model                       | Train Accuracy | Test Accuracy | Precision    | Recall      | F1 Score   |
 |------------------------------|----------------|---------------|--------------|-------------|------------|
-| **LSTM**                     | 0.9384         | 0.5379        | 0.5307       | 0.5435      | 0.5379     |
-| **BERT**                     | 0.9880         | 0.7482        | 0.7475       | 0.7482      | 0.7439     |
+| **LSTM**                     | 0.9494         | 0.5734        | 0.5737       | 0.5802      | 0.5735     |
+| **BERT**                     | 0.9880         | 0.7586        | 0.7602       | 0.7586      | 0.7532     |
 | **mBERT**                    | 0.9960         | 0.7586        | 0.7584       | 0.7586      | 0.7554     |
 | **Llama 3.1 8B Instruct**     | 0.9373         | 0.7324        | 0.6652       | 0.6582      | 0.7324     |
 
@@ -188,11 +188,11 @@ For Deep Learning, parameters had to be tuned manually till an appreciable perfo
 - Epochs: 30
 
 **Performance:**
-- **Train Accuracy**: 0.9384
-- **Test Accuracy**: 0.5379
-- **F1 Score**: 0.5379
-- **Precision**: 0.5307
-- **Recall**: 0.5435
+- **Train Accuracy**: 0.9494
+- **Test Accuracy**: 0.5734
+- **F1 Score**: 0.5735
+- **Precision**: 0.5737
+- **Recall**: 0.5802
 
 **Description**: The LSTM model was trained using the Adam optimizer and performed well during training but exhibited moderate test accuracy and F1 score, suggesting overfitting. Precision and recall were closely matched, indicating a consistent classification performance across positive cases.
 
@@ -207,10 +207,10 @@ For Deep Learning, parameters had to be tuned manually till an appreciable perfo
 
 **Performance:**
 - **Train Accuracy**: 0.9880
-- **Test Accuracy**: 0.7482
-- **F1 Score**: 0.7439
-- **Precision**: 0.7475
-- **Recall**: 0.7482
+- **Test Accuracy**: 0.7586
+- **F1 Score**: 0.7532
+- **Precision**: 0.7602
+- **Recall**: 0.7586
 
 **Description**: BERT performed excellently during training, reaching near-perfect accuracy. Test accuracy and F1 score were also strong, highlighting BERT’s ability to generalize well. The model showed balanced precision and recall, which means it handled both true positives and false positives well. Further training didn't improve the loss by much and hence stopped.
 
